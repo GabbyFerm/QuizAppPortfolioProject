@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "QuestionText": "Which artist released the hit song 'Blinding Lights' in 2019?",
+      "Answers": [ "Drake", "Ariana Grande", "The Weeknd", "Billie Eilish" ],
+      "CorrectAnswer": "The Weeknd"
+    },
+    {
+      "QuestionText": "Which Swedish artist is known for the song 'Dancing on My Own'?",
+      "Answers": [ "Robyn", "Zara Larsson", "Avicii", "Tove Lo" ],
+      "CorrectAnswer": "Robyn"
+    },
+    {
+      "QuestionText": "Which Swedish DJ and producer created the hit songs 'Wake Me Up' and 'Levels'?",
+      "Answers": [ "Alesso", "Sebastian Ingrosso", "Avicii", "Axwell" ],
+      "CorrectAnswer": "Avicii"
+    },
+    {
+      "QuestionText": "Which pop star left her teenage dreams behind when she dropped her third album, 'Prism', in 2013 with edgier hits like 'Roar' and 'Dark Horse'?",
+      "Answers": [ "Katy Perry", "Miley Cyrus", "Taylor Swift", "Demi Lovato" ],
+      "CorrectAnswer": "Katy Perry"
+    },
+    {
+      "QuestionText": "She went on to have a successful solo career which saw her win a Grammy Award in 2002 for 'Let Me Blow Ya Mind' - who was the lead singer of the band No Doubt?",
+      "Answers": [ "Billie Eilish", "Madonna", "Gwen Stefani", "Megan Trainor" ],
+      "CorrectAnswer": "Gwen Stefani"
+    },
+    {
+      "QuestionText": "Which Swedish pop group reunited in 2021 and released a new album, 'Voyage'?",
+      "Answers": [ "ABBA", "Roxette", "Ace of Base", "Aqua" ],
+      "CorrectAnswer": "ABBA"
+    },
+    {
+      "QuestionText": "What 2013 Miley Cyrus song claims she came in like the titular construction item, and swings on the same item in the music video?",
+      "Answers": [ "Malibu", "Drive", "Can’t Be Tamed", "Wrecking Ball" ],
+      "CorrectAnswer": "Wrecking Ball"
+    },
+    {
+      "QuestionText": "What one-named pop star and former frontman of The Police got his name from a habit of wearing yellow-and-black-striped sweaters in his youth?",
+      "Answers": [ "Prince", "Seal", "Sting", "Bono" ],
+      "CorrectAnswer": "Sting"
+    },
+    {
+      "QuestionText": "Which Swedish artist released the global hit 'Lush Life'?",
+      "Answers": [ "Tove Lo", "Zara Larsson", "Robyn", "Icona Pop" ],
+      "CorrectAnswer": "Zara Larsson"
+    },
+    {
+      "QuestionText": "Which American rock band released the iconic album 'Nevermind' in 1991?",
+      "Answers": [ "Nirvana", "Pearl Jam", "Soundgarden", "Red Hot Chili Peppers" ],
+      "CorrectAnswer": "Nirvana"
+    }
+  ]
+}
