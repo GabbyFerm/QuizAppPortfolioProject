@@ -1,15 +1,14 @@
-# Music Quiz App
-This is a simple console-based music quiz app that allows users to test their knowledge of music-related questions. The app loads a set of questions from a JSON file and presents them one by one to the user. For each question, the user selects an answer, and the app checks if it is correct.
+# Quick Portfolio Project - Music Quiz
 
-The app provides:
-- A colorful console interface with ASCII art for the quiz title.
-- Multiple-choice questions with answers loaded from a JSON file.
-- Real-time feedback on correct or incorrect answers.
-- A final score display at the end of the quiz.
+## Description
+This project is a simple music quiz application that loads quiz questions from a JSON file, presents them to the user, and checks their answers. The application provides a colorful terminal interface using the Spectre.Console library and ASCII art via the Figgle library.
 
-The core functionality includes:
-- Loading questions from a JSON file.
-- Asking questions and checking answers.
-- Displaying results after the quiz ends.
+## Features
+- Displays a fun music quiz with a title rendered in ASCII art.
+- Asks questions and validates answers.
+- Displays results at the end with the score.
+- Colorful console output with a spinner animation for loading.
 
-The app uses libraries like Figgle for ASCII text rendering and Spectre.Console for styling and colorful output.
+## Libraries Used
+- **Spectre.Console**: A library for creating rich and interactive console applications.
+- **Figgle**: A library for generating ASCII art text, used to render the quiz title.
