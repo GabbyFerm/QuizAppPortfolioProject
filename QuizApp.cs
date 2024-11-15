@@ -39,26 +39,27 @@ namespace QuickPortfolioProject
                 return false;
             }
 
-            AnsiConsole.MarkupLine($"[bold mediumpurple2]{question.QuestionText}[/]");
+            ClearAndDisplayTitle("Music Quiz");
 
-            var prompt = new SelectionPrompt<int>()
-            .Title("[bold mediumpurple2]\nChoose an answer:[/]")
-            .PageSize(4)
-            .HighlightStyle(new Style(foreground: Color.DarkViolet));
-
-            for (int i = 0; i < question.Answers.Count; i++)
+            AnsiConsole.Status()
+            .Spinner(Spinner.Known.Arc)
+            .SpinnerStyle(Style.Parse("magenta"))
+            .Start("[bold magenta]Loading question...[/]", ctx =>
             {
-                prompt.AddChoice(i + 1); 
-            }
+                Thread.Sleep(1000); 
+            });
 
-            for (int i = 0; i < question.Answers.Count; i++)
-            {
-                AnsiConsole.MarkupLine($"[]{i + 1}.[/] {question.Answers[i]}");
-            }
+            AnsiConsole.MarkupLine($"[bold plum3]{question.QuestionText}[/]");
 
-            var answer = AnsiConsole.Prompt(prompt);
+            var prompt = new SelectionPrompt<string>()
+            .Title("[bold mediumpurple2]\nChoose an answer (use arrow keys):[/]")
+            .PageSize(4)  
+            .HighlightStyle(new Style(foreground: Color.MediumPurple2))
+            .AddChoices(question.Answers); 
 
-            bool isCorrect = question.Answers[answer - 1] == question.CorrectAnswer;
+            var selectedAnswer = AnsiConsole.Prompt(prompt);
+
+            bool isCorrect = selectedAnswer == question.CorrectAnswer;
             if (isCorrect)
             {
                 AnsiConsole.MarkupLine("[bold mediumpurple2]Correct![/]\n");
@@ -68,15 +69,36 @@ namespace QuickPortfolioProject
                 AnsiConsole.MarkupLine("[bold red]Wrong![/]\n");
             }
 
+            Thread.Sleep(2000);
             return isCorrect;
         }
 
         public void DisplayResults(int correctAnswers, int totalQuestions)
         {
             var score = (double)correctAnswers / totalQuestions * 100;
-            var result = $"You answered {correctAnswers} out of {totalQuestions} questions correctly!";
-            AnsiConsole.MarkupLine(result);
-            AnsiConsole.MarkupLine($"Your score: [bold mediumpurple2]{score:0.00}%[/]");
+            AnsiConsole.Status()
+            .Spinner(Spinner.Known.Dots)
+            .SpinnerStyle(Style.Parse("magenta"))
+            .Start("[bold magenta]Calculating your score...[/]", ctx =>
+            {
+            
+                Thread.Sleep(2000);
+            });
+
+            var table = new Table();
+            table.Border = TableBorder.Rounded; 
+            table.BorderStyle = Style.Parse("magenta");
+            table.AddColumn("[bold mediumpurple2]Quiz Results[/]");
+            table.AddRow($"You answered [bold mediumpurple2]{correctAnswers}[/] out of [bold mediumpurple2]{totalQuestions}[/] questions correctly!");
+            table.AddRow($"Your score: [bold mediumpurple2]{score:0.00}%[/]");
+
+            AnsiConsole.Write(table);
+        }
+        public void ClearAndDisplayTitle(string title)
+        {
+            AnsiConsole.Clear();
+            var figgleTitle = FiggleFonts.Doom.Render(title);
+            AnsiConsole.Markup($"[bold magenta]{figgleTitle}[/]");
         }
     }
 }
